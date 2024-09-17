@@ -30,30 +30,17 @@ app.post('/api/verify-code', (req, res) => {
             return res.json({ success: false, message: 'Error recording code' });
         }
         console.log('Code recorded:', code);
-    });
 
-    // Placeholder logic for code verification
-    if (code === '123456') {
-        res.json({ success: true, message: 'Code verified successfully' });
-    } else {
-        res.json({ success: false, message: 'Invalid code' });
-    }
+        // Send the response only after recording the code
+        if (code === '123456') {
+            res.json({ success: true, message: 'Code verified successfully' });
+        } else {
+            res.json({ success: false, message: 'Invalid code' });
+        }
+    });
 });
 
 // Start server and listen on all network interfaces
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is running on http://0.0.0.0:${PORT}`);
-});
-
-    // Placeholder logic for code verification
-    if (code === '123456') {
-        res.json({ success: true, message: 'Code verified successfully' });
-    } else {
-        res.json({ success: false, message: 'Invalid code' });
-    }
-});
-
-// Start server
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
 });
