@@ -36,7 +36,7 @@ app.post('/api/verify-code', (req, res) => {
         }
         console.log('Code recorded:', code);
 
-        // Send the response only after recording the code
+        // Respond based on the provided code
         if (code === '123456') {
             res.json({ success: true, message: 'Code verified successfully' });
         } else {
@@ -49,3 +49,4 @@ app.post('/api/verify-code', (req, res) => {
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is running on http://0.0.0.0:${PORT}`);
 });
+
